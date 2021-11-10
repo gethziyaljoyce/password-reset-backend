@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
-// const URL = process.env.URL;
-const URL = "mongodb+srv://joyce:admin%40123@cluster0.fqwyn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const URL = process.env.URL;
+// const URL = "mongodb+srv://joyce:admin%40123@cluster0.fqwyn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 console.log(URL);
 // const DB_NAME = "password_reset";
 const DB_NAME = process.env.DB_NAME;
