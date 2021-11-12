@@ -71,7 +71,7 @@ const forgotPassword = {
                     res
                         .status(201)
                         .send(
-                            "enter 'password' and 'confirm_password' and change to POST method"
+                            "enter 'password' and 'confirmPassword' and change to POST method"
                         );
                     console.log("success");
                 }
@@ -85,7 +85,7 @@ const forgotPassword = {
         try {
             // getting data from params and body
             const { userId, token } = req.params;
-            const { password, confirm_password } = req.body;
+            const { password, confirmPassword } = req.body;
 
             //   check whether the userId exists
             const data = await mongodb.users.findOne({ _id: ObjectId(userId) });
@@ -105,8 +105,8 @@ const forgotPassword = {
                 if (!payload1) {
                     res.status(400).send("URL is wrong_token");
                 } else {
-                    // check password and confirm_password is matching
-                    if (password === confirm_password) {
+                    // check password and confirmPassword is matching
+                    if (password === confirmPassword) {
                         data.password = password;
                         data.password = await bcrypt.hash(data.password, 10);
 
