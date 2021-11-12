@@ -6,7 +6,7 @@ const send_mail = async (email, subject, content) => {
         service: "gmail",
         auth: {
             user: process.env.MAILER_USERNAME,
-            password: process.env.MAILER_PASSWORD,
+            pass: process.env.MAILER_PASSWORD,
         },
     });
 
