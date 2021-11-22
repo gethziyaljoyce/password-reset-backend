@@ -11,14 +11,14 @@ const send_mail = async (email, subject, content) => {
     });
 
     //developer mail detail
-    let mail = {
+    let mailOptions = {
         from: "jc.getjoy@gmail.com",
         to: email,
         subject: subject,
         text: content,
     };
 
-    transporter.sendMail(mail, (error, info) => {
+    transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.log("Error in sending mail:", error);
         } else {
